@@ -1,0 +1,21 @@
+{
+    "name": "connector/google-sheet",
+    "description": "Allowed connection whit google sheets",
+    "type": "project",
+    "require": {
+        "php": "^7.4",
+        "google/apiclient": "^2.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.2",
+        "friendsofphp/php-cs-fixer": "^2.16"
+    },
+    "authors": [
+        {
+            "name": "Marielis",
+            "email": "marielisgarcia1991@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

@@ -1,0 +1,8 @@
+/vendor
+/.idea
+.env
+
+/tests/_reports/*
+/build*
+/.scannerwork
+.phpstorm_helpers/*
