@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/Src/Controller/ClientNameProvider.php';
+require __DIR__ . '/src/Controller/ClientNameProvider.php';
 
 
 print new ClientNameProvider();

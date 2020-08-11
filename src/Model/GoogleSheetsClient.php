@@ -1,7 +1,7 @@
 <?php
 
 require __DIR__ . '/../../vendor/autoload.php';
-include __DIR__ . '/../../Config/app.php';
+include __DIR__ . '/../../config/app.php';
 
 class GoogleSheetsClient
 {
@@ -17,10 +17,10 @@ class GoogleSheetsClient
         $client->setApplicationName('Google Sheets API PHP Quickstart');
         $client->setScopes(Google_Service_Sheets::SPREADSHEETS_READONLY);
 
-        $client->setAuthConfig(__DIR__ . '/../../Config/credentials.json');
+        $client->setAuthConfig(__DIR__ . '/../../config/credentials.json');
 
         $client->setAccessType('offline');
-        $accessToken = json_decode(file_get_contents(__DIR__ . '/../../Config/token.json'), true);
+        $accessToken = json_decode(file_get_contents(__DIR__ . '/../../config/token.json'), true);
         $client->setAccessToken($accessToken);
 
         // Refresh the token if it's expired.
