@@ -22,7 +22,7 @@ class GoogleSheetsClient
         $client->setApplicationName(getAppName());
         $client->setScopes(Google_Service_Sheets::SPREADSHEETS_READONLY);
 
-        $client->setAuthConfig(__DIR__ . '/../../config/credentials.json');
+        $client->setAuthConfig(getConfigGoogleSheet());
 
         $client->setAccessType(self::ACCESS_TYPE);
         $accessToken = getConfigGoogleSheet(self::CONFIG_TYPE);
