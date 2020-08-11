@@ -1,10 +1,15 @@
 <?php
 
-require __DIR__ . '/../../vendor/autoload.php';
 include __DIR__ . '/../../config/app.php';
 
 class GoogleSheetsClient
 {
+    /**
+     * Config
+     */
+    const CONFIG_TYPE = 'token';
+    const ACCESS_TYPE = 'offline';
+
     /**
      * GoogleApiClient getClient
      * Returns an authorized API client.
@@ -14,13 +19,14 @@ class GoogleSheetsClient
     public static function getClient()
     {
         $client = new Google_Client();
-        $client->setApplicationName('Google Sheets API PHP Quickstart');
+        $client->setApplicationName(getAppName());
         $client->setScopes(Google_Service_Sheets::SPREADSHEETS_READONLY);
 
         $client->setAuthConfig(__DIR__ . '/../../config/credentials.json');
 
-        $client->setAccessType('offline');
-        $accessToken = json_decode(file_get_contents(__DIR__ . '/../../config/token.json'), true);
+        $client->setAccessType(self::ACCESS_TYPE);
+        $accessToken = getConfigGoogleSheet(self::CONFIG_TYPE);
+
         $client->setAccessToken($accessToken);
 
         // Refresh the token if it's expired.
